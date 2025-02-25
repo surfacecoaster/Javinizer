@@ -32,7 +32,7 @@ RUN apt-get install -y mediainfo
 RUN wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb \
     && dpkg -i packages-microsoft-prod.deb \
     && apt-get update \
-    && apt-get install -y powershell \
+    && apt-get install -y powershell=7.3.11 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pwsh modules
