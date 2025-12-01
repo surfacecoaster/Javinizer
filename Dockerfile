@@ -33,6 +33,7 @@ RUN wget https://github.com/PowerShell/PowerShell/releases/download/v7.3.11/powe
     && dpkg -i powershell_7.3.11-1.deb_amd64.deb \
     && apt-get install -f \
     && rm powershell_7.3.11-1.deb_amd64.deb \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install pwsh modules
 RUN pwsh -c "Set-PSRepository 'PSGallery' -InstallationPolicy Trusted" \
